@@ -23,6 +23,7 @@ author varchar(100),
 category varchar(255),
 quantity int
 );
+describe book_details ;
 -- drop table book_details;
 
 
@@ -59,5 +60,6 @@ create table issue_book_details(
 
 -- drop table issue_book_details ;
 
-
-
+describe users;
+describe student_details ;
+describe issue_book_details ;
