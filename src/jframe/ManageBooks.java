@@ -74,7 +74,7 @@ public class ManageBooks extends javax.swing.JFrame {
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setInt(1, book_id);
             ResultSet rs = pst.executeQuery();
-            if(rs.next()){
+            if(rs.next()){                                                                          
                 
             }
             
