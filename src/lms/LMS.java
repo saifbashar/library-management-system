@@ -6,6 +6,7 @@ package lms;
 
 import java.util.regex.Pattern;
 import jframe.LoginPage;
+import jframe.Splash_Screen;
 
 /**
  *
@@ -18,8 +19,11 @@ public class LMS {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        LoginPage login = new LoginPage();
-        login.setVisible(true);
+        // LoginPage login = new LoginPage();
+        // login.setVisible(true);
+         Splash_Screen ss = new Splash_Screen();
+          ss.setVisible(true);
+         
     }
     
 }
