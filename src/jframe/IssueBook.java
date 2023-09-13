@@ -103,9 +103,11 @@ public class IssueBook extends javax.swing.JFrame {
         String bookName = lbl_bookName.getText();
         String studentName = lbl_studentName.getText();
         String phoneNo = lbl_phoneNo.getText();
-        Date uIssueDate = date_issueDate.getDatoFecha();
-        Date uDueDate = date_DueDate.getDatoFecha();
-
+//        Date uIssueDate = date_issueDate.getDatoFecha();
+        Date uIssueDate = mDate_issueDate.getDate();
+//        Date uDueDate = date_DueDate.getDatoFecha();
+        Date uDueDate = mDate_dueDate.getDate();
+        
         Long l1 = uIssueDate.getTime();
         Long l2 = uDueDate.getTime();
 
@@ -221,6 +223,52 @@ public class IssueBook extends javax.swing.JFrame {
         }
         return isAlreadyIssue;
     }
+    
+    
+    public boolean isWithinMax() {
+        boolean flag = false;
+        int bookId = Integer.parseInt(txt_bookId.getText());
+        int studentId = Integer.parseInt(txt_studentId.getText());
+        try {
+            Connection con = DBConnection.getConnection();
+            String sql = "select count(*) as cnt from issue_book_details where student_id = ? and status = ?;";
+            PreparedStatement pst = con.prepareStatement(sql);
+
+           
+            pst.setInt(1, studentId);
+            pst.setString(2, "Pending");
+
+            ResultSet rs = pst.executeQuery();
+            
+            if (rs.next()) {
+                String cnt = rs.getString("cnt");
+                System.out.println(cnt);
+                int cnt1 = Integer.parseInt(cnt);
+                if(cnt1 >= 3){
+                     flag = true;
+                }
+                else{
+                    flag = false;
+                }
+               
+            } else {
+                flag = false;
+            }
+
+            /*
+            if (rs.next()) {
+               
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Enter valid book id");
+                txt_bookId.setText("");
+            }
+             */
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -269,13 +317,13 @@ public class IssueBook extends javax.swing.JFrame {
         txt_bookId = new app.bolivia.swing.JCTextField();
         jLabel21 = new javax.swing.JLabel();
         txt_studentId = new app.bolivia.swing.JCTextField();
-        date_issueDate = new rojeru_san.componentes.RSDateChooser();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        date_DueDate = new rojeru_san.componentes.RSDateChooser();
         rSButtonHover2 = new rojeru_san.complementos.RSButtonHover();
         kButton8 = new com.k33ptoo.components.KButton();
         kButton6 = new com.k33ptoo.components.KButton();
+        mDate_issueDate = new com.toedter.calendar.JDateChooser();
+        mDate_dueDate = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -511,12 +559,6 @@ public class IssueBook extends javax.swing.JFrame {
         });
         jPanel3.add(txt_studentId, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 260, 220, 40));
 
-        date_issueDate.setColorBackground(new java.awt.Color(0, 204, 51));
-        date_issueDate.setColorForeground(new java.awt.Color(0, 204, 51));
-        date_issueDate.setFuente(new java.awt.Font("SF UI  Text 2", 0, 14)); // NOI18N
-        date_issueDate.setPlaceholder("Select Issue Date..");
-        jPanel3.add(date_issueDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 340, 220, -1));
-
         jLabel22.setBackground(new java.awt.Color(0, 0, 0));
         jLabel22.setFont(new java.awt.Font("SF UI  Text", 0, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(0, 204, 51));
@@ -528,12 +570,6 @@ public class IssueBook extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(0, 204, 51));
         jLabel23.setText("Due Date:");
         jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 410, 100, 40));
-
-        date_DueDate.setColorBackground(new java.awt.Color(0, 204, 51));
-        date_DueDate.setColorForeground(new java.awt.Color(0, 204, 51));
-        date_DueDate.setFuente(new java.awt.Font("SF UI  Text 2", 0, 14)); // NOI18N
-        date_DueDate.setPlaceholder("Select Issue Date..");
-        jPanel3.add(date_DueDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 410, 220, -1));
 
         rSButtonHover2.setBackground(new java.awt.Color(51, 51, 51));
         rSButtonHover2.setText("ISSUE BOOK");
@@ -606,6 +642,16 @@ public class IssueBook extends javax.swing.JFrame {
         });
         jPanel3.add(kButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 0, 30, 30));
 
+        mDate_issueDate.setBackground(new java.awt.Color(255, 255, 255));
+        mDate_issueDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 51), 2));
+        mDate_issueDate.setFont(new java.awt.Font("SF UI  Text 2", 0, 14)); // NOI18N
+        jPanel3.add(mDate_issueDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 350, 220, 30));
+
+        mDate_dueDate.setBackground(new java.awt.Color(255, 255, 255));
+        mDate_dueDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 51), 2));
+        mDate_dueDate.setFont(new java.awt.Font("SF UI  Text 2", 0, 14)); // NOI18N
+        jPanel3.add(mDate_dueDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 220, 30));
+
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 650));
 
         pack();
@@ -651,8 +697,10 @@ public class IssueBook extends javax.swing.JFrame {
         // TODO add your handling code here:
         String bookId = txt_bookId.getText();
         String studentId = txt_studentId.getText();
-        Date uIssueDate = date_issueDate.getDatoFecha();
-        Date uDueDate = date_DueDate.getDatoFecha();
+//        Date uIssueDate = date_issueDate.getDatoFecha();
+        Date uIssueDate = mDate_issueDate.getDate();
+//        Date uDueDate = date_DueDate.getDatoFecha();
+        Date uDueDate = mDate_dueDate.getDate();
         if (bookId.length() == 0) {
             JOptionPane.showMessageDialog(this, "Please enter book id.");
         } else if (studentId.length() == 0) {
@@ -667,7 +715,11 @@ public class IssueBook extends javax.swing.JFrame {
             if (l1 < l2) {
                 if (isAlreadyIssued()) {
                     JOptionPane.showMessageDialog(this, "This student already has this books.");
-                } else {
+                }
+                else if(isWithinMax()){
+                    JOptionPane.showMessageDialog(this, "This student exceeds it's books limit.");
+                }
+                else {
                     int quantity = Integer.parseInt(lbl_quantity.getText());
                     if (issueBook() && quantity > 0) {
                         JOptionPane.showMessageDialog(this, "Book Issued Sucessfully.");
@@ -753,8 +805,6 @@ public class IssueBook extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rojeru_san.componentes.RSDateChooser date_DueDate;
-    private rojeru_san.componentes.RSDateChooser date_issueDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -795,6 +845,8 @@ public class IssueBook extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_studentError;
     private javax.swing.JLabel lbl_studentId;
     private javax.swing.JLabel lbl_studentName;
+    private com.toedter.calendar.JDateChooser mDate_dueDate;
+    private com.toedter.calendar.JDateChooser mDate_issueDate;
     private rojeru_san.complementos.RSButtonHover rSButtonHover2;
     private app.bolivia.swing.JCTextField txt_bookId;
     private app.bolivia.swing.JCTextField txt_studentId;
