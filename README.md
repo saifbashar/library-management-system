@@ -33,6 +33,8 @@
 
 A library is a place where a huge collection of books and resources are available which can be accessible by the users. It helps the students promote their viewpoints in a variety of ways. In a traditional library adding new books, adding new students, issuing new books, and returning books are done manually. This leads to the chance of human errors that may create some problems, Thus a secured and reliable system is required.
 
+A library management system is a fully automated, error-free, secured, and fast information system that removes the problem of a traditional library.
+
 ### Features 
 
  1. Add Books
