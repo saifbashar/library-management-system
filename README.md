@@ -1,7 +1,7 @@
 
 
 <h2 align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-17%20203659.png" />
     </a>
     <br>
@@ -61,77 +61,77 @@ https://github.com/saifbashar/library-management-system/tree/main/required%20jar
 
 ### Proposed Method
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-17%20210859.png" />
     </a>
 </div>
 
 ### Login Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20181043.png" />
     </a>
 </div>
 
 ### Signup Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20180244.png" />
     </a>
 </div>
 
 ### Home Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20181158.png" />
     </a>
 </div>
 
 ### Manage Books Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20181329.png" />
     </a>
 </div>
 
 ### Manage Students Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20181609.png" />
     </a>
 </div>
 
 ###  Issue Books Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20181731.png" />
     </a>
 </div>
 
 ###  Return Books Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20182717.png" />
     </a>
 </div>
 
 ###  View Records Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20182837.png" />
     </a>
 </div>
 
 ###  View Issued Books Page
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20182933.png" />
     </a>
 </div>
 
 ###  Defaulter List
 <div align="center">
-    <a href="https://httpie.io" target="blank_">
+    <a href="https://saifbashar.github.io" target="blank_">
         <img  alt="library" src="https://raw.githubusercontent.com/saifbashar/Kk/main/Screenshot%202023-09-13%20183019.png" />
     </a>
 </div>
